@@ -2,7 +2,7 @@
 #shellcheck disable=SC2206
 
 # DepMark
-# Copyright (C) 2025  SakuSnack
+# Copyright (C) 2025 SakuSnack
 # 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -51,9 +51,9 @@ newOrphans=()
 scriptRunDateTime="$(date -Iseconds)"
 
 # Set up output log file names
-outputFileRequired="depMark-$scriptRunDateTime-RequiredAndMarked.txt"
-outputFileOptional="depMark-$scriptRunDateTime-OptionalAndMarked.txt"
-outputFileNewOrphans="depMark-$scriptRunDateTime-NewOrphans.txt"
+outputFileRequired="DepMark-$scriptRunDateTime-RequiredAndMarked.txt"
+outputFileOptional="DepMark-$scriptRunDateTime-OptionalAndMarked.txt"
+outputFileNewOrphans="DepMark-$scriptRunDateTime-NewOrphans.txt"
 
 # Function to ask for user confirmation
 function yes_or_no {
