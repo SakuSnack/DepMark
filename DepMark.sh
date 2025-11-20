@@ -85,7 +85,7 @@ function print_changes {
 	orphanPackagesCount=$(pacman -Qdtq | wc -l)
 	newOrphans=("$(echo "${orphanPackagesPre[@]}" "${orphanPackages[@]}" | tr ' ' '\n' | sort | uniq -u | tr '\n' ' ')")
 	echo "Orphan packages before: ${bold}$orphanPackagesPreCount${normal}"
-	echo "Orphan packages after: ${bold}$orphanPackagesCount${normal}"
+	echo "Orphan packages after:  ${bold}$orphanPackagesCount${normal}"
 	if [[ -z "${newOrphans[0]}" ]]; then
 		true
 	else
