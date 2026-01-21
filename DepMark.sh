@@ -2,22 +2,20 @@
 #shellcheck disable=SC2206
 
 # DepMark
-# Copyright (C) 2025 SakuSnack
-# 
+# Copyright (C) 2025-2026 SakuSnack
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-
 
 # This script will read all explicitly installed packages from pacman
 # and if they are required by any other package, set them to
@@ -102,9 +100,19 @@ function apply_package_changes {
 }
 
 # Start of user-facing output
-echo "Disclaimer: Dependency cycles are not detected by this script.
-Potentially necessary packages may be marked as dependencies as a result.
-You may review changes in
+#echo "Disclaimer: Dependency cycles are not detected by this script.
+#Potentially necessary packages may be marked as dependencies as a result."
+echo "Welcome to DepMark for Arch Linux.
+This script will read your package list and mark any
+explicitly required packages as dependencies if they are
+required by another package. You may also choose to mark any
+packages that are only optionally required by another package
+as dependencies.
+
+The pacman database will only be modified at the end of the script
+and you will have the chance to review your changes before commiting.
+
+After commiting, you may also review changes in
 ${bold}$outputFileRequired${normal}
 ${bold}$outputFileOptional${normal}
 ${bold}$outputFileNewOrphans${normal}
