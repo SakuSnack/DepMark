@@ -14,12 +14,14 @@ When the end of the package list is reached, you will have the chance to review 
 If you confirm, pacman will be called to mark all collected packages as dependencies, and txt files logging the changes will be created in the same directoy as the script. You will also be notified of new orphan packages after pacman has been called, if there are any.
 
 ### What this script does not do
-~~This script will not detect dependency cycles and thus might mark two or more packages as dependencies of each other, and, if they are not required by any other package, turn them into orphans. You will be notified if any orphans are created, but will have to resolve such a situation manually.~~
+This script does not uninstall any packages, merely prepare the list of explicitly installed packages to be shorter and therefore easier to manage manually.
 
-I realized that circular dependencies are not seen as orphans by pacman, but I'm leaving in the function anyway. 
+~~It will not detect dependency cycles and thus might mark two or more packages as dependencies of each other, and, if they are not required by any other package, turn them into orphans. You will be notified if any orphans are created, but will have to resolve such a situation manually.~~
+
+I realized that circular dependencies are not seen as orphans by pacman, but I'm leaving in the orphan check and count anyway. 
 You can use ``pacreport`` from the ``pacutils`` package to check for dependency cycles.
 
-It also does not uninstall any packages, merely prepare the list of explicitly installed packages to be shorter and therefore easier to manage manually.
+
 
 ### How to use
 Clone the repository, cd into it, mark the script as executable, then run it
